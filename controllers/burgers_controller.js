@@ -1,11 +1,11 @@
 var express = require("express");
 var router = express.Router();
-var cat = require("../models/burger.js");
+var burger = require("../models/burger.js");
 
 // --Here my code goes--
 
 router.get("/", function (req, res) {
-    burgers.all(function (data) {
+    burger.all(function (data) {
         var hbsObject = {
             burgers: data
         };
@@ -14,7 +14,7 @@ router.get("/", function (req, res) {
     });
 });
 
-router.post("/api/burgers", function (req, res) {
+router.post("/api/burger", function (req, res) {
     burger.insertOne([
         "burger_name",
     ], [

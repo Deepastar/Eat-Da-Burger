@@ -1,11 +1,13 @@
+var connection = require("./config/connection");
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var PORT = process.env.PORT || 8080;
 
-app.use(express.static("public"));
+app.use(express.static(__dirname + "public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
 
 var exphbs = require("express-handlebars");
 
