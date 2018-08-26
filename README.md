@@ -2,6 +2,10 @@
 Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat
 For this  restaurant app, first i needed to create few directories and initial setup. My folder has structured as below format:
 (PhaseI)
+
+
+
+
 |
 ├── config
 │   ├── connection.js
