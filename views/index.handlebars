@@ -1,11 +1,12 @@
-<h1>SOme text</h1>
-<h2>Some text</h2>
 <main>
+    <h1>Some text</h1>
+    <h2>Some text</h2>
+
     <div>
         {{#each burgers}} {{#unless this.devoured}}
         <div>
-            <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
-                <button type="submit" class="eachbgr"> {{this.burger_name}}</button>
+            <form action="/api/burgers/update/{{this.id}}" method="POST">
+                {{this.burger_name}} <button type="submit" class="eachbgr"> Devour It </button>
             </form>
         </div>
         {{/unless}} {{/each}}
@@ -22,9 +23,9 @@
 </main>
 
 <div>
-    <form action="/burgers" method="POST">
+    <h2>Enter a Burger!</h2>
+    <form action="/api/burgers" method="POST">
         <input type="text" id="name" name="burger_name" placeholder="">
         <button type="submit" class="addBurgerButton">Submit</button>
     </form>
-    <h5>Enter a Burger!</h5>
 </div>
