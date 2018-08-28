@@ -1,31 +1,68 @@
 <main>
-    <h1>Some text</h1>
-    <h2>Some text</h2>
 
-    <div>
-        {{#each burgers}} {{#unless this.devoured}}
-        <div>
-            <form action="/api/burgers/update/{{this.id}}" method="POST">
-                {{this.burger_name}} <button type="submit" class="eachbgr"> Devour It </button>
-            </form>
+    <header class="hdr">
+	  <p>Welcome to my hot restaurent!!!</p>
+	</header>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-4" id="cI"><h3> Chosen Item</h3></div>
+            <div class="col-4"  id="de"><h3> Devour </h3></div>
+            <div class="col-4" id="dvd"><h3> Devoured </h3></div>
         </div>
-        {{/unless}} {{/each}}
-        <div>
-            {{#each burgers}} {{#if this.devoured}}
-            <div>
-                <div>
-                    {{this.burger_name}}
-                </div>
+        {{#each burgers}}
+        <div class="row">
+            {{#if this.devoured}}
+
+            <div class="col-4"></div>
+            <div class="col-4"></div>
+            <div class="col-4">{{this.burger_name}} </div>
+
+            {{else}}
+
+            <div class="col-4">{{this.burger_name}}</div>
+            <div class="col-4">
+                <form action="/api/burgers/update/{{this.id}}" method="POST">
+                    <button type="submit" class="eachbgr"> Devour It </button>
+                </form>
             </div>
-            {{/if}} {{/each}}
-        </div>
-    </div>
-</main>
+            <div class="col-4"> </div>
 
-<div>
-    <h2>Enter a Burger!</h2>
+            {{/if}}
+        </div>
+        {{/each}}
+    </div>
+
+
+
+
+    {{!-- {{#each burgers}} {{#unless this.devoured}}
+    <div>
+        <form action="/api/burgers/update/{{this.id}}" method="POST">
+            {{this.burger_name}} <button type="submit" class="eachbgr"> Devour It </button>
+        </form>
+    </div>
+    {{/unless}} {{/each}}
+    <div>
+        <ul>
+            <li>
+                {{#each burgers}} {{#if this.devoured}}
+                <div>
+                    <div>
+                        {{this.burger_name}}
+                    </div>
+                </div>
+                {{/if}} {{/each}}
+            </li>
+        </ul>
+    </div> --}}
+</main>
+<footer>
+<div class="submit" id="submtBtn">
+    <h1 class="sbtHeader">Enter a Burger!</h1>
     <form action="/api/burgers" method="POST">
         <input type="text" id="name" name="burger_name" placeholder="">
         <button type="submit" class="addBurgerButton">Submit</button>
     </form>
 </div>
+</footer>

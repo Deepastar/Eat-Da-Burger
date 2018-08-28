@@ -1,3 +1,40 @@
 body{
-    background-image: url("../img/bgr.jpg");
+background-image: url("../img/bg1.jpg");  
+}  
+
+header{
+    padding: 3%;
+}
+main{
+    text-align: center;
+}
+
+#submtBtn{
+    text-align: center;
+}
+
+table { 
+    empty-cells: show; 
+}
+.container{
+color: greenyellow;
+font-weight: bold;
+}
+.sbtHeader{
+    color: greenyellow;
+    font-family: 'Permanent Marker', cursive;
+    text-shadow: 3px 3px rgb(7, 7, 7);
+}
+.hdr{
+    font-family: 'Permanent Marker', cursive;
+    color: greenyellow;
+    text-shadow: 5px 5px rgb(15, 1, 10);
+    font-size: 60px;
+    font-weight: 100;
+}
+
+#cI, #de, #dvd{
+    color: rgb(43, 7, 201);
+    font-family: 'Anton', sans-serif;
+    text-shadow: 2px 2px whitesmoke;
 }
